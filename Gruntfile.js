@@ -21,11 +21,11 @@ module.exports = function (grunt) {
     test: require('./bower.json').appPath || 'client/test',
     dist: 'dist',
     api: {
-      development: 'http://0.0.0.0:3000/api/',
+      development: 'http://0.0.0.0:3001/api/',
       production: '/api/'
     },
     site: {
-      development: 'http://0.0.0.0:3000',
+      development: 'http://0.0.0.0:3001',
       production: ''
     },
     host: '0.0.0.0'
@@ -147,7 +147,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 3001,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '<%= yeoman.host %>',
         livereload: 35729

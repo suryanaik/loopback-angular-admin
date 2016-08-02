@@ -24,3 +24,20 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+// Setup the view engine (jade)
+var path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.get('/ldap', function (req, res, next){
+  res.render('pages/ldap', {
+    user: req.user,
+    url: req.url
+  });
+});
+
+app.get('/auth/logout', function(req, res, next) {
+  req.logout();
+  res.redirect('/');
+});
